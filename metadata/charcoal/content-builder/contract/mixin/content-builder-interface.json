@@ -1,0 +1,19 @@
+{
+    "admin": {
+        "form_groups": {
+            "content_builder": {
+                "template": "charcoal/admin/widget/group-attachment",
+                "type": "charcoal/admin/widget/form-group/group-attachment",
+                "group_display_mode": "tab",
+                "title": {
+                    "en": "Content Builder",
+                    "fr": "Contenu éditable"
+                },
+                "show_title": true,
+                "show_header": false,
+                "priority": 200,
+                "icon": "briefcase"
+            }
+        }
+    }
+}
