@@ -1,7 +1,7 @@
 {
     "name": "locomotivemtl/charcoal-contrib-content-builder",
     "description": "Utils for content builder style attachments, using group attachment widget.",
-    "type": "contrib",
+    "type": "library",
     "keywords": [ "charcoal", "attachment", "utils" ],
     "homepage": "https://locomotive.ca",
     "authors": [
