@@ -1,5 +1,6 @@
 # Ignore for "dist".
-build/*             export-ignore
+/build              export-ignore
+/build              linguist-detectable=false
 /tests              export-ignore
 /.editorconfig      export-ignore
 /.gitattributes     export-ignore
