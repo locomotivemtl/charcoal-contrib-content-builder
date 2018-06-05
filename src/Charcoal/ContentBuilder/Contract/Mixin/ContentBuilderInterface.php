@@ -2,7 +2,7 @@
 
 namespace Charcoal\ContentBuilder\Contract\Mixin;
 
-// from `charcoal-model`
+// from `charcoal-core`
 use Charcoal\Model\Collection;
 use Charcoal\Model\ModelInterface;
 

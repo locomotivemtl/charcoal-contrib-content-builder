@@ -15,9 +15,6 @@ A [Charcoal][charcoal-app] service provider content builder.
 
 -   [Installation](#installation)
     -   [Dependencies](#dependencies)
--   [Service Provider](#service-provider)
-    -   [Parameters](#parameters)
-    -   [Services](#services)
 -   [Configuration](#configuration)
 -   [Usage](#usage)
 -   [Development](#development)
@@ -38,8 +35,13 @@ $ composer require locomotivemtl/charcoal-contrib-content-builder
 ```
 
 
-
 ### Dependencies
+
+- [Charcoal-core](https://github.com/locomotivemtl/charcoal-core) ~0.3
+- [Charcoal-cms](https://github.com/locomotivemtl/charcoal-cms) ~0.5
+- [Charcoal-attachment](https://github.com/locomotivemtl/charcoal-attachment) ~0.9
+
+
 
 #### Required
 
@@ -47,35 +49,74 @@ $ composer require locomotivemtl/charcoal-contrib-content-builder
 
 
 
-#### PSR
-
---TBD--
-
-
-
-## Service Provider
-
-### Parameters
-
---TBD--
-
-
-
-### Services
-
---TBD--
-
-
-
 ## Configuration
 
---TBD--
+Use the `ContentBuilderInterface` on a model or an instance of `TemplateableInterface`.
+Configure Attachment groups use the usual method. ex : 
+
+```json
+    {
+        "attachables": {
+            "exemple/attachments/object/text": {
+                "label": {
+                    "en": "Text",
+                    "fr": "Texte"
+                }
+            }
+        },
+        "groups": {
+            "content": [
+                "exemple/attachments/object/text"
+            ]
+        },
+        "widgets": {
+            "content": {
+                "title": {
+                    "en": "Content",
+                    "fr": "Contenu"
+                },
+                "show_title": true,
+                "show_header": true,
+                "icon": "edit",
+                "template": "charcoal/admin/widget/form-group/attachment",
+                "group": "content",
+                "attachment_heading": "{{ ident }}",
+                "show_attachment_heading": false,
+                "show_attachment_preview": true,
+                "attachment_options": {
+                    "show_preview": true,
+                    "show_heading": false
+                },
+                "priority": 100,
+                "attachable_objects": "content"
+            }
+        }
+    }
+```
 
 
 
 ## Usage
 
---TBD--
+Attach any interfaces that are based on this structural model : 
+
+```json
+    {
+        "attachments": {
+            "widgets": {
+                "content": {
+                    "type": "charcoal/admin/widget/form-group/attachment",
+                    "preset": "content"
+                }
+            }
+        }
+    }
+```
+
+This will dynamically add an attachment group to the model.
+You can provide the interface to the template controller if the model implements `TemplateableInterface`.
+This will dynamically add attachments groups on the model depending of the template context.
+This can be very useful for `section` object, for example, to allow different attachments groups easily based on the template.
 
 
 
@@ -139,7 +180,7 @@ Charcoal is licensed under the MIT license. See [LICENSE](LICENSE) for details.
 
 
 [charcoal-contrib-content-builder]:  https://packagist.org/packages/locomotivemtl/charcoal-contrib-content-builder
-[charcoal-app]:             https://packagist.org/packages/locomotivemtl/charcoal-app
+[charcoal-app]:                      https://packagist.org/packages/locomotivemtl/charcoal-app
 
 [dev-scrutinizer]:    https://scrutinizer-ci.com/g/locomotivemtl/charcoal-contrib-content-builder/
 [dev-coveralls]:      https://coveralls.io/r/locomotivemtl/charcoal-contrib-content-builder
