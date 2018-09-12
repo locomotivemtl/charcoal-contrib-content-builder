@@ -36,5 +36,5 @@ interface ContentBuilderInterface
      * @throws \InvalidArgumentException If the $group or $type is invalid.
      * @return Collection|Attachment[]
      */
-    public function attachments($group = null, $type = null, callable $before = null, callable $after = null);
+    public function getAttachments($group = null, $type = null, callable $before = null, callable $after = null);
 }
