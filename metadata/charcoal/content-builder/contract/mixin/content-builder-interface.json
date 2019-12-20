@@ -1,16 +1,16 @@
 {
     "admin": {
-        "form_groups": {
-            "content_builder": {
+        "formGroups": {
+            "contentBuilder": {
                 "template": "charcoal/admin/widget/group-attachment",
                 "type": "charcoal/admin/widget/form-group/group-attachment",
-                "group_display_mode": "tab",
+                "groupDisplayMode": "tab",
                 "title": {
                     "en": "Content Builder",
                     "fr": "Contenu éditable"
                 },
-                "show_title": true,
-                "show_header": false,
+                "showTitle": true,
+                "showHeader": false,
                 "icon": "briefcase"
             }
         }
